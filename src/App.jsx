@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import OpenAI from 'openai';
+import ReactMarkdown from 'react-markdown'
 
 const client = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -64,9 +65,11 @@ export default function App() {
           border: '1px solid #ddd',
           borderRadius: 8,
           whiteSpace: 'pre-wrap',
+          textAlign: 'left',
+          lineHeight: 1.6
         }}
       >
-        {response}
+        <ReactMarkdown>{response}</ReactMarkdown>
       </div>
     </div>
   );
