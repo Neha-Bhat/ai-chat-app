@@ -18,12 +18,18 @@ export default function App() {
     setResponse('');
 
     try {
-      const result = await client.chat.completions.create({
+      const stream = await client.chat.completions.create({
         model: 'gpt-4.1-mini',
         messages: [{ role: 'user', content: prompt }],
+        stream: true
       });
 
-      setResponse(result.choices[0].message.content || '');
+      for await (const chunk of stream) {
+        const text = chunk.choices[0]?.delta?.content || '';
+        setResponse(prev => prev+text)
+      }
+
+      // setResponse(stream.choices[0].message.content || '');
     } catch (err) {
       console.error(err);
       setResponse('Error calling AI');
