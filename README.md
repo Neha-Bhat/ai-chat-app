@@ -8,4 +8,4 @@ Simple QnA is supported, no history retained.
 Added streaming option, set stream: true
 When a chunk is received, it is appended to the existing response
 /////
-handled markdown
+handled markdown rendering
