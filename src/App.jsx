@@ -97,7 +97,7 @@ export default function App() {
     >
       <div style={{ maxWidth: 1300, minWidth: 600 }}>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'start', alignItems: 'center'}}>
-          <img src="../public/logo.svg" alt="Vsper" width="40" height="40" style={{marginBottom: '24px'}} />
+          <img src="/logo.svg" alt="Vsper" width="40" height="40" style={{marginBottom: '24px'}} />
           <h6
           style={{
             textAlign: 'center',
